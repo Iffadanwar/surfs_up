@@ -5,9 +5,8 @@ app = Flask(__name__)
 if __name__ == "__main__":
     app.run()
 
-@app.route("/")
-def age():
-    ages = input("Please enter your age.")
+@app.route("/age/<age>")
+def age(ages=None):
     if ages < 25:
         return f"{ages}, Thats still young"
     elif (ages >= 25) & (ages <= 50):
